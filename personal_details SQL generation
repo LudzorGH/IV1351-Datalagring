@@ -1,0 +1,22 @@
+INSERT INTO personal_details (person_number,first_name,last_name,address,contact_id)
+VALUES
+  ('193403308001','Kirestin','Webb','288-4622 Ut Street',1),
+  ('191606242552','Hamish','Dillard','758-8886 Nec Ave',2),
+  ('197112156247','Haley','Workman','175-9110 Dis Avenue',3),
+  ('192402283594','India','Hodges','603-9721 Vitae, Rd.',4),
+  ('195609123510','Zeph','Kelley','812-6276 Eget St.',5),
+  ('197312121345','Ginger','Porter','797-7124 Libero Rd.',6),
+  ('200102035432','Amela','Merrill','Ap #598-5538 Non Ave',7),
+  ('196305151626','Octavius','Peterson','Ap #398-7320 Cursus St.',8),
+  ('191309124383','Keiko','Peck','Ap #131-2325 Diam St.',9),
+  ('196406073111','Ocean','Doyle','Ap #655-2194 Sed Rd.',10),
+  ('192403041706','Urielle','Pierce','Ap #464-1151 Vel Road',11),
+  ('197411265074','Carlos','Hebert','Ap #641-6211 Phasellus St.',12),
+  ('193105219775','Gwendolyn','Stevenson','Ap #638-524 Donec St.',13),
+  ('190103181301','Oleg','Hays','P.O. Box 942, 3312 Ad Rd.',14),
+  ('199512177673','Raymond','Padilla','P.O. Box 465, 9028 Nec, Road',15),
+  ('192306068418','Nolan','William','4641 Parturient Avenue',16),
+  ('191712222747','Gabriel','Shepherd','5364 Urna St.',17),
+  ('190805302844','Brandon','Hawkins','Ap #928-9739 Velit. Road',18),
+  ('194706181751','Quentin','Sykes','Ap #818-8525 Odio Road',19),
+  ('192207142162','Alexa','Johnson','Ap #680-1141 Nunc Road',20);
