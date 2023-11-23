@@ -1,0 +1,7 @@
+INSERT INTO brand (brand_name,brand_description)
+VALUES
+  ('Cool Guitars','Cool as in cold! Very good quality on instrument. Nice strings or whatever.'),
+  ('Famstruments','A very good instrument brand, famous for absolutely nothing. Great filler data, woah… Such a famous and well established brand.'),
+  ('Kris Instruments','Super duper good! The instruments from this brand are above all else. They will automatically make you super good at playing music n shit. Great!!!'),
+  ('The Bland Brand','This is a description.'),
+  (‘Intruments n stuff','Intruments are a thing you play to make sound. The sound can be interpreted as music…');
