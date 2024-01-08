@@ -1,0 +1,23 @@
+SELECT 
+  ROW_NUMBER() OVER () - 1 AS no_of_siblings,
+  no_of_students
+FROM (
+select count(*) as no_of_siblings from
+student where student.student_id not in (select student_id from sibling)
+
+union
+
+select count(*) as no_of_siblings from 
+(SELECT COUNT(*) AS row_count
+FROM sibling
+GROUP BY student_id
+HAVING COUNT(*) = 2)
+
+union
+
+select count(*) as no_of_siblings from 
+(SELECT COUNT(*) AS row_count
+FROM sibling
+GROUP BY student_id
+HAVING COUNT(*) = 1)
+) as no_of_students
