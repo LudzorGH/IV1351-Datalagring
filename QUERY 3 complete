@@ -1,0 +1,15 @@
+select ins_id as "Instructor Id", first_name as "First Name",
+last_name as "Last Name", lessons as "No of Lessons" from
+
+(select ins_id, person_number as p_num, lessons from 
+ (select instructor_id as ins_id, lessons from
+  (select instructor_id, count(*) as lessons from 
+   (select instructor_id from timeslot as ts where 
+   extract(month from date) = extract(month from current_date))
+  group by instructor_id)
+ where lessons > 1) 
+join instructor
+on ins_id = instructor.instructor_id)
+
+join personal_details
+on p_num = personal_details.person_number
