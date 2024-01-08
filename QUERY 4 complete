@@ -1,6 +1,12 @@
 select to_char(date, 'Dy') as "Day", 
 all_lessons.genre as "Genre", 
-(all_lessons.max_students - coalesce(all_lessons.students_attending, 0)) 
+case
+(all_lessons.max_students - coalesce(all_lessons.students_attending, 0))
+when 0 then 'No seats left'
+when 1 then '1-2 seats left'
+when 2 then '1-2 seats left'
+else 'Many seats left'
+end
 as "No of Free Seats"
 
 from timeslot join
