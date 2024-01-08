@@ -1,0 +1,57 @@
+select 
+indgroup.extract as "month", 
+"individual", 
+"group",
+coalesce(ensemble_lessons_taught, 0) as "ensemlbe"
+from
+(select 
+individual_lessons.extract, 
+coalesce(individual_lessons_taught, 0) as "individual", 
+coalesce(group_lessons_taught, 0) as "group"--,
+
+
+from 
+(
+select extract, count(lesson_id) as individual_lessons_taught from (
+select * from (
+select extract(month from date), lesson_id from
+(select date, lesson_id from timeslot join individual_lesson 
+on timeslot.timeslot_id = individual_lesson.timeslot_id)
+where extract(year from date) = 2024
+order by date) as subquery
+where subquery.lesson_id not in (select lesson_id from group_lesson))
+group by extract
+) as individual_lessons
+
+full outer join
+(
+select extract, count(lesson_id) as group_lessons_taught from (
+select * from (
+select extract(month from date), lesson_id from
+(select date, lesson_id from timeslot join individual_lesson 
+on timeslot.timeslot_id = individual_lesson.timeslot_id)
+where extract(year from date) = 2024
+order by date) as subquery
+where subquery.lesson_id in 
+(select lesson_id from group_lesson
+ where lesson_id not in (select lesson_id from ensemble)))
+group by extract
+) as group_lessons
+
+on individual_lessons.extract = group_lessons.extract
+) as indgroup
+
+full outer join
+(
+    select extract, count(lesson_id) as ensemble_lessons_taught from (
+select * from (
+select extract(month from date), lesson_id from
+(select date, lesson_id from timeslot join individual_lesson 
+on timeslot.timeslot_id = individual_lesson.timeslot_id)
+where extract(year from date) = 2024
+order by date) as subquery
+where subquery.lesson_id in (select lesson_id from ensemble))
+group by extract
+) as ensemble
+
+on indgroup.extract = ensemble.extract
