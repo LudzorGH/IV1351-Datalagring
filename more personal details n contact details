@@ -1,0 +1,44 @@
+INSERT INTO personal_details (person_number,first_name,last_name,address,contact_id)
+VALUES
+  ('198212067621','Guinevere','Rhodes','788-9179 Et, Ave',21),
+  ('199105173181','April','Gilmore','Ap #215-4096 Semper Avenue',22),
+  ('193855121339','Edan','Donaldson','Ap #455-8404 Nullam Rd.',23),
+  ('192606018164','Nero','Wilkerson','2185 Vivamus St.',24),
+  ('192011032498','Echo','Moss','Ap #991-5539 Vel Avenue',25),
+  ('197504269517','Mallory','Rosa','Ap #780-3469 Non Road',26),
+  ('193702297289','Xenos','Roy','P.O. Box 401, 5322 Tempor, St.',27),
+  ('198205216868','Gray','Bryan','342-8603 Aliquam Rd.',28),
+  ('199010121319','Yoko','Hamilton','P.O. Box 256, 2482 Orci Rd.',29),
+  ('192307208765','Felicia','Allen','P.O. Box 159, 9862 Fusce Rd.',30),
+  ('190703155664','Sean','Henderson','P.O. Box 715, 3662 Luctus, Avenue',31),
+  ('193207295751','Wesley','Glover','719-7012 Duis Road',32),
+  ('193801264128','Ezra','Watts','426-5084 Metus. St.',33),
+  ('194411159834','Dylan','Wilkinson','488 Suscipit St.',34),
+  ('195402288832','Uriah','Mccoy','Ap #953-8331 Senectus Rd.',35);
+
+
+INSERT INTO contact_person (first_name,last_name,contact_id)
+VALUES
+  ('Deacon','Blankenship',36),
+  ('Colleen','Hughes',37),
+  ('Herrod','Maddox',38),
+  ('Nathaniel','Maynard',39),
+  ('Callum','Mccray',40),
+  ('Britanni','May',41),
+  ('Vivian','Padilla',42),
+  ('Unity','Campos',43),
+  ('Elmo','Estes',44),
+  ('Tyrone','Lambert',45);
+
+INSERT INTO contact_details (phone_number,email)
+VALUES
+  ('(998) 492-9397','aliquam.tincidunt.nunc@icloud.couk'),
+  ('(233) 715-5817','porttitor.interdum.sed@yahoo.edu'),
+  ('(115) 289-2562','consequat.enim.diam@aol.net'),
+  ('(678) 192-0048','sed@protonmail.edu'),
+  ('1-178-226-0867','neque.nullam@outlook.net'),
+  ('(473) 240-3852','purus.gravida.sagittis@protonmail.edu'),
+  ('(450) 527-5146','sollicitudin.commodo@yahoo.net'),
+  ('1-342-260-1965','sollicitudin.orci@google.ca'),
+  ('1-455-130-7565','vel.sapien.imperdiet@outlook.com'),
+  ('1-755-387-3787','felis.nulla@hotmail.ca');
