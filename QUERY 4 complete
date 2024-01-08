@@ -1,0 +1,16 @@
+select to_char(date, 'Dy') as "Day", 
+all_lessons.genre as "Genre", 
+(all_lessons.max_students - coalesce(all_lessons.students_attending, 0)) 
+as "No of Free Seats"
+
+from timeslot join
+(
+select ens_ind_lesson.lesson_id, timeslot_id, genre, students_attending, max_students
+from group_lesson 
+join 
+ (select ensemble.lesson_id, timeslot_id, genre 
+from individual_lesson 
+ join ensemble on individual_lesson.lesson_id = ensemble.lesson_id
+) as ens_ind_lesson on ens_ind_lesson.lesson_id = group_lesson.lesson_id
+) as all_lessons on all_lessons.timeslot_id = timeslot.timeslot_id
+where date between current_date and current_date + INTERVAL '1 week'
