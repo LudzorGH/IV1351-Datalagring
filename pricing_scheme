@@ -1,0 +1,6 @@
+insert into pricing_scheme (price_class, price, instructor_payment, discount)
+values
+(1, 100, 70, 0),
+(2, 120, 84, 0),
+(3, 100, 70, 20),
+(4, 120, 84, 20);
